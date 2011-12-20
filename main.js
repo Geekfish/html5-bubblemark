@@ -28,7 +28,7 @@ function init() {
    //get new number of balls from user input
    numballs = $( '#numballs' ).val();
  
-   for(var i = 0; i &lt; numballs; i++) {
+   for(var i = 0; i < numballs; i++) {
     /**
      * - Create each new ball as an image shape keeping
      * the circle properties for collision detection.
@@ -36,7 +36,7 @@ function init() {
      * - Randomize starting velocity
      * - IMPORTANT: For image shapes always define visibility
      */
-    var ball = oo.image({src:'./resources/ball.png',
+    var ball = oo.image({src:'../resources/ball.png',
           x: i * 100,
           y: i * 50,
           radius:radius,
@@ -68,18 +68,18 @@ function init() {
   //Animate is an endless loop
   oo.animate(function() {
    // check for wall collision
-   for(var i = 0; i &lt; numballs; i++) {
+   for(var i = 0; i < numballs; i++) {
     var ball = balls[i];
     ball.modify({x: ball.x + ball.vx,
         y: ball.y + ball.vy});
     Bouncy.check_walls(ball);
    }
    //for each ball…
-   for(i = 0; i &lt; numballs; i++) {
+   for(i = 0; i < numballs; i++) {
     var ball_a = balls[i];
  
     //check for collisions with the current ball
-    for(var j = i + 1; j &lt; numballs; j++) {
+    for(var j = i + 1; j < numballs; j++) {
      var ball_b = balls[j];
      Bouncy.check_collision(ball_a, ball_b);
     }
